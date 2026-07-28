@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace the placeholder domain with your real domain before launch. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.aquatel-placeholder.co.za/index.html</loc><priority>1.0</priority></url>
+  <url><loc>https://www.aquatel-placeholder.co.za/products.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.aquatel-placeholder.co.za/services.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.aquatel-placeholder.co.za/subscriptions.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.aquatel-placeholder.co.za/process.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.aquatel-placeholder.co.za/quality.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.aquatel-placeholder.co.za/about.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.aquatel-placeholder.co.za/contact.html</loc><priority>0.8</priority></url>
+</urlset>

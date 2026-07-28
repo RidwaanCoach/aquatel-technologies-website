@@ -1,0 +1,87 @@
+/* ============================================================
+   Aquatel Technologies - Responsive Layer (mobile-first scale-down)
+   Breakpoints: 1024 / 768 / 560 / 380
+   ============================================================ */
+
+/* Large tablet / small desktop */
+@media (max-width: 1024px) {
+  :root { --nav-h: 70px; }
+
+  .nav__links { display: none; }
+  .nav__burger { display: grid; }
+
+  .hero__inner { grid-template-columns: 1fr; gap: var(--sp-4); }
+  .hero__visual { order: -1; }
+  .hero__bottle { width: min(240px, 60%); }
+  .hero__stats { grid-template-columns: repeat(4, 1fr); }
+
+  .process-wrap,
+  .compare-wrap,
+  .calc-wrap { grid-template-columns: 1fr; }
+  .process-visual { min-height: 240px; order: -1; }
+
+  .trust-grid { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-6 { grid-template-columns: repeat(3, 1fr); }
+  .sustain-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-6 { grid-template-columns: repeat(2, 1fr); }
+
+  .hero h1 { font-size: clamp(2rem, 9vw, 3rem); }
+  .hero__sub { font-size: 1.02rem; }
+  .hero__stats { grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); }
+  .hero__cta .btn { flex: 1 1 auto; }
+
+  .field-row { grid-template-columns: 1fr; }
+  .metric-row { grid-template-columns: 110px 1fr; }
+
+  .sustain-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+
+  .section { padding-block: clamp(3rem, 10vw, 4.5rem); }
+}
+
+/* Large phone */
+@media (max-width: 560px) {
+  :root { --nav-h: 64px; }
+
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .grid-4, .grid-6, .sustain-grid { grid-template-columns: 1fr 1fr; }
+  .footer__grid { grid-template-columns: 1fr; }
+
+  .card { padding: var(--sp-3); }
+  .calc-result { padding: var(--sp-4); }
+
+  .float-whatsapp { width: 52px; height: 52px; bottom: 16px; right: 16px; }
+  .float-whatsapp::after { display: none; }
+  .back-top { bottom: 16px; left: 16px; width: 44px; height: 44px; }
+
+  .footer__bottom { flex-direction: column; }
+  .toggle-switch { flex-wrap: wrap; }
+}
+
+/* Small phone */
+@media (max-width: 380px) {
+  .trust-grid, .grid-4, .grid-6, .sustain-grid { grid-template-columns: 1fr; }
+  .hero__stats { grid-template-columns: 1fr 1fr; }
+  .btn { width: 100%; }
+  .hero__cta { flex-direction: column; }
+}
+
+/* Landscape phones: keep hero usable */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero { min-height: auto; padding-block: calc(var(--nav-h) + 2rem) 3rem; }
+}
+
+/* Print */
+@media print {
+  .nav, .float-whatsapp, .back-top, .cart-bar, .hero__particles, .cursor-glow { display: none !important; }
+  body { background: #fff; color: #000; }
+}

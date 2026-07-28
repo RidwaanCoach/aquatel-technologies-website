@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Aquatel Technologies Purified &amp; Bottled Water</title>
+  <meta name="description" content="Browse Aquatel purified water products - 500ml, 1.5L, 5L bottled water, 10L and 20L refills, and bulk office supply. Build an enquiry list and order via WhatsApp.">
+  <meta property="og:title" content="Aquatel Products | Bottled Water &amp; Refills">
+  <meta property="og:description" content="Bottled water, refills and bulk supply. Pricing to be confirmed.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/brand/logo-horizontal.png">
+  <meta property="og:image:alt" content="Aquatel Technologies - reverse osmosis purified water">
+  <meta property="og:site_name" content="Aquatel Technologies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#032B5F">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/brand/logo-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6/dist/tippy.css">
+  <script type="application/ld+json">
+  { "@context":"https://schema.org","@type":"ItemList","name":"Aquatel Water Products",
+    "itemListElement":[
+      {"@type":"Product","name":"500ml Purified Water","description":"Reverse osmosis bottled water","offers":{"@type":"Offer","price":"0","priceCurrency":"ZAR","availability":"https://schema.org/PreOrder"}},
+      {"@type":"Product","name":"20L Refill","description":"Bulk reverse osmosis refill","offers":{"@type":"Offer","price":"0","priceCurrency":"ZAR","availability":"https://schema.org/PreOrder"}}
+    ] }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow" style="background:rgba(0,194,232,.16);color:#7FE9FF">Our range</span>
+        <h1>Purified water products</h1>
+        <p>Bottled water, refills and bulk supply. Add items to your enquiry list - pricing is configurable and confirmed on request.</p>
+      </div>
+      <div class="wave-divider" style="position:absolute;bottom:-1px;left:0;right:0" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="height:70px"><path fill="var(--bg)" d="M0,40 C240,80 480,0 720,30 C960,60 1200,90 1440,40 L1440,80 L0,80 Z"/></svg></div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Filters -->
+        <div class="card" data-reveal style="display:flex;gap:var(--sp-3);flex-wrap:wrap;align-items:flex-end;margin-bottom:var(--sp-5)">
+          <div class="field" style="flex:1;min-width:200px"><label for="filterType">Filter by product type</label>
+            <select id="filterType"><option value="all">All types</option><option>Bottled Water</option><option>Refill</option><option>Bulk Supply</option></select></div>
+          <div class="field" style="flex:1;min-width:200px"><label for="filterCustomer">Filter by customer type</label>
+            <select id="filterCustomer"><option value="all">All customers</option><option>Home</option><option>Office</option><option>Gym</option><option>Event</option><option>Business</option></select></div>
+          <p class="muted" style="margin:0;flex:1;min-width:200px;font-size:.85rem">Tip: add items, then export your summary or send it on WhatsApp.</p>
+        </div>
+
+        <div class="grid grid-3" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container center" data-reveal>
+        <h2>Not sure what you need?</h2>
+        <p class="muted" style="margin-inline:auto">Use the water usage calculator on the home page, or tell us your situation and we will recommend a plan.</p>
+        <div class="flex-cta center mt-4"><a href="index.html#calculator" class="btn btn-primary"><i data-lucide="calculator"></i>Open calculator</a><a href="contact.html" class="btn btn-outline"><i data-lucide="mail"></i>Ask us</a></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2/dist/umd/popper.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/tippy.js@6/dist/tippy-bundle.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script src="js/products-data.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/product-configurator.js" defer></script>
+</body>
+</html>

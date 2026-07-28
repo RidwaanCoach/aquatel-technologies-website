@@ -1,0 +1,12 @@
+{
+  "name": "Aquatel Technologies",
+  "short_name": "Aquatel",
+  "description": "Reverse osmosis purified drinking water - bottled, refill and bulk supply.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#032B5F",
+  "theme_color": "#032B5F",
+  "icons": [
+    { "src": "assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

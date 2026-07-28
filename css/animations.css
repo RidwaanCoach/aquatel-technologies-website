@@ -1,0 +1,130 @@
+/* ============================================================
+   Aquatel Technologies - Animations
+   CSS keyframes + scroll-reveal states. GSAP handles the
+   heavier hero/timeline work in js/animations.js.
+   ============================================================ */
+
+/* ---------- Scroll reveal (driven by IntersectionObserver in main.js) ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  will-change: opacity, transform;
+}
+[data-reveal].in-view { opacity: 1; transform: translateY(0); }
+[data-reveal="left"] { transform: translateX(-36px); }
+[data-reveal="right"] { transform: translateX(36px); }
+[data-reveal="zoom"] { transform: scale(0.92); }
+[data-reveal="left"].in-view,
+[data-reveal="right"].in-view,
+[data-reveal="zoom"].in-view { transform: none; }
+
+/* Stagger delays */
+[data-delay="1"] { transition-delay: 0.08s; }
+[data-delay="2"] { transition-delay: 0.16s; }
+[data-delay="3"] { transition-delay: 0.24s; }
+[data-delay="4"] { transition-delay: 0.32s; }
+[data-delay="5"] { transition-delay: 0.40s; }
+
+/* ---------- Keyframes ---------- */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+@keyframes float-y-slow {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-22px) rotate(2deg); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ripple-anim {
+  to { transform: scale(4); opacity: 0; }
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 6px var(--aqua)); }
+  50% { filter: drop-shadow(0 0 18px var(--aqua)); }
+}
+@keyframes bob-bubble {
+  0% { transform: translateY(0) scale(1); opacity: 0.7; }
+  100% { transform: translateY(-120px) scale(1.3); opacity: 0; }
+}
+@keyframes wave-move {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+@keyframes page-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---------- Applied animation utilities ---------- */
+.float { animation: float-y 6s ease-in-out infinite; }
+.float-slow { animation: float-y-slow 9s ease-in-out infinite; }
+.pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+/* Floating decorative bubbles */
+.bubbles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; }
+.bubble {
+  position: absolute; bottom: -40px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(0,194,232,0.15));
+  border: 1px solid rgba(255,255,255,0.25);
+  animation: bob-bubble linear infinite;
+}
+
+/* Animated underline wave for headings */
+.waterline {
+  display: inline-block; position: relative;
+}
+
+/* Page-load transition overlay */
+.page-loader {
+  position: fixed; inset: 0; z-index: 2000; background: var(--grad-deep);
+  display: grid; place-items: center;
+  transition: opacity 0.6s var(--ease), visibility 0.6s var(--ease);
+}
+.page-loader.done { opacity: 0; visibility: hidden; }
+.page-loader .drop {
+  width: 60px; height: 60px;
+  animation: pulse-glow 1.4s ease-in-out infinite, float-y 2s ease-in-out infinite;
+}
+
+/* Body fade-in on load */
+body { animation: page-in 0.5s var(--ease); }
+
+/* Counter number style */
+.counter { font-variant-numeric: tabular-nums; }
+
+/* Animated SVG flow pipe (RO process) */
+.flow-path {
+  stroke-dasharray: 6 8;
+  animation: flow-dash 1.2s linear infinite;
+}
+@keyframes flow-dash { to { stroke-dashoffset: -28; } }
+
+/* Skeleton shimmer */
+.skeleton {
+  background: linear-gradient(90deg, var(--border) 25%, rgba(0,194,232,0.12) 50%, var(--border) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.6s infinite linear;
+  border-radius: var(--r-sm);
+}
+
+/* ---------- Reduced motion: respect user preference ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .float, .float-slow, .pulse-glow, .bubble, .bubbles { animation: none !important; }
+  .hero__particles { display: none; }
+}

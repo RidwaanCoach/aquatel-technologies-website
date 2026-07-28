@@ -1,0 +1,23 @@
+﻿# dependencies
+node_modules/
+
+# secrets - never commit these
+.env
+.env.*
+!.env.example
+
+# build output
+.next/
+dist/
+build/
+out/
+.expo/
+.turbo/
+.vercel/
+
+# logs / os cruft
+*.log
+npm-debug.*
+.DS_Store
+Thumbs.db
+coverage/
